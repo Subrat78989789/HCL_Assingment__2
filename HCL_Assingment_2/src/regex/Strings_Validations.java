@@ -4,7 +4,19 @@ package regex;
 import java.util.Scanner;
 
 public class Strings_Validations {
-	static Scanner sc=new Scanner(System.in);
+	//for consuming new line character  we are creating the Scanner object as static variable and we know that static object/reference are associated to class due to this we don't need object to call it.Yhis has reduced the overhead of creation of object of class
+	static Scanner sc=new Scanner(System.in);//if in a programm we are dealing with one scanner object then only one buffer will be created and in that buffer only all inputs will be scanned
+	//Here we have created only one scanner object therefore we have only one buffer
+	//Multiple scanner object means multiple buffer creation
+	
+	/*IMP Note
+	 	//for consuming new line character  we are creating the Scanner object as static variable and we know that static object/reference are associated to class due to this we don't need object to call it.Yhis has reduced the overhead of creation of object of class
+		//here due to static scanner object is created there is only one buffer is created for taking input and due to this there are many newline character issues arised that we have discussed earlier in back side of Selenium Notebook to handle the issue we have to use sc.nextline()
+		
+		//There is one more option is that within these method we can create new Scanner object like this-> Scanner sc=new Scanner(System.in);
+		//This new Scanner object will create new buffer  which will avoid the encounter of leading whitespace issue and through these  newline character issue will be resolved in beginning but in future if you take input there may be conflict arises again. 
+
+	 */
 	static String test_String;
 	public static void  validateMobileNumber()
 	{
