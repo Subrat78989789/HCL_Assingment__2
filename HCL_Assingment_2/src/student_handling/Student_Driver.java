@@ -16,7 +16,7 @@ public class Student_Driver extends Student_Service {
 	//static int choice;
 	
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		Scanner sc=new Scanner(System.in);//Each Scanner object has associated buffer which stores input temporarily
 		Student_Service service=new Student_Service();
 		Student student;
 		int choice=0;
@@ -32,7 +32,7 @@ public class Student_Driver extends Student_Service {
 			System.out.print("Enter your Choice: ");
 			
 		try {
-		 choice=sc.nextInt();
+		 choice=sc.nextInt();//When we provide wrong input instead of giving input as integer we provide string or character then InputMismatch exception has thrown now till this time choice variable has not consumed any input therefore it will contain its by default value which we declared as 0.By the time the inputed input is still present in temporary buffer that is associated with scanner object sc.
 
 				
 				 //Student RollNumber regexp->^STU[0-9]{3}$
@@ -81,7 +81,8 @@ public class Student_Driver extends Student_Service {
 		{
 			System.out.println("Invalid Input Try Again");
 			sc.nextLine();//clear wrong input from buffer for updating choice variable
-			//if we will not clear wrong input buffer then each time input will be taken as that input which is present in buffer
+			//if we will not clear wrong input from  buffer then each time input will be taken as that input which is present in buffer
+			//While loop will be executed infinitly here because choice=0 it is not changing because we have not provided the valid input and due to this InputMismatch exception occurs
 			//for example->if inputed "abc" and we know sc.nextInt() will throw input mismatch exception now still the input buffer of scanner object sc contain the "abc" in buffer know we have to clear it so that next input can be taken for choice variable
 		}
 		catch(Exception e)
