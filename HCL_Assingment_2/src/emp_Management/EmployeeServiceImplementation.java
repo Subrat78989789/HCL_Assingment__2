@@ -15,7 +15,8 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	}
 	@Override
 	public void addEmployee(Employee e)throws Exception {
-		 if (e==null || !eValidation.Employee_Id(e.getEmp_id())) {
+		 if (e==null || !eValidation.Employee_Id(e.getEmp_id()))//Checking/Demonstrating the null key and null value support
+		 {
 	           throw new Employee_Exception("Invalid Employee");
 	            
 		 }  
